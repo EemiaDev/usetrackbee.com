@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackBee | One-Click Job Tracking to Google Sheets</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/mrbee.png" alt="Mr. Bee Mascot" class="h-9 w-auto bee-float">
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">TrackBee</span>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#how-it-works" class="hover:text-amber-600 transition">How it Works</a>
+            <a href="#features" class="hover:text-amber-600 transition">Features</a>
+            <a href="support.html" class="hover:text-amber-600 transition">Support</a>
+            <a href="#" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-full hover:bg-amber-200 transition">Install Extension</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-16 pb-24 px-6 text-center border-b border-amber-50">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-[1.2] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-700">
+                Stop Copy-Pasting.<br><span class="text-amber-500 underline decoration-amber-200 decoration-4 underline-offset-8">Just Click.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
+                Track your job applications directly in Google Sheets, super fast.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://buymeacoffee.com/eemia.studio" target="_blank" class="bg-white border border-slate-200 text-slate-600 px-8 py-4 rounded-xl font-bold text-lg hover:border-amber-400 transition flex items-center justify-center">
+                    Tip Creator
+                </a>
+                <a href="#" class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition shadow-xl shadow-slate-200 flex items-center justify-center gap-3">
+                    <i class="fab fa-chrome"></i> Add to Chrome - It's Free
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-slate-400">Join 100+ organized job seekers who own their data.</p>
+        </div>
+    </header>
+
+    <!-- How it Works Section (TAB COMPONENT) -->
+    <section id="how-it-works" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">"Zero-Fluff" Workflow</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">We don't try to be your new job search CRM, we power your existing workflow.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <!-- Tab Navigation (Left Side on Desktop) -->
+                <div class="w-full md:w-1/6 flex flex-col gap-3">
+                    <button data-tab="step1" class="tab-btn text-left p-6 rounded-2xl border-2 border-transparent hover:border-amber-100 transition group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 group-[.active]:bg-amber-500 group-[.active]:text-white">1</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Connect</h4>
+                                <!-- <p class="text-sm text-slate-500 mt-1">Link your Sheet & map columns.</p> -->
+                            </div>
+                        </div>
+                    </button>
+                    <button data-tab="step2" class="tab-btn text-left p-6 rounded-2xl border-2 border-transparent hover:border-amber-100 transition group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 group-[.active]:bg-amber-500 group-[.active]:text-white">2</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Detect</h4>
+                                <!-- <p class="text-sm text-slate-500 mt-1">Mr. Bee finds the job data.</p> -->
+                            </div>
+                        </div>
+                    </button>
+                    <button data-tab="step3" class="tab-btn active text-left p-6 rounded-2xl border-2 border-transparent hover:border-amber-100 transition group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 group-[.active]:bg-amber-500 group-[.active]:text-white">3</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Save</h4>
+                                <!-- <p class="text-sm text-slate-500 mt-1">One click, no copy-pasting.</p> -->
+                            </div>
+                        </div>
+                    </button>
+                    <button data-tab="step4" class="tab-btn text-left p-6 rounded-2xl border-2 border-transparent hover:border-amber-100 transition group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 group-[.active]:bg-amber-500 group-[.active]:text-white">4</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Organize</h4>
+                                <!-- <p class="text-sm text-slate-500 mt-1">View your clean, clipped sheet.</p> -->    
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Tab Content (Right Side on Desktop) -->
+                <div class="w-full md:w-5/6 bg-slate-50 rounded-3xl p-4 md:p-8 border border-slate-100 min-h-[400px] flex items-center">
+                    
+                    <!-- Content Step 1 -->
+                    <div id="step1" class="tab-content hidden w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <img src="assets/step1.png" alt="Connect to Google Sheet" class="w-full aspect-video rounded-xl mb-8 object-cover">
+                        <div class="text-center max-w-lg">
+                            <h3 class="text-2xl font-bold mb-3">Link your Google Sheets in seconds.</h3> 
+                            <p class="text-slate-600">Your job data stays securely in your own Google Sheets. No new accounts, zero setup required.</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Step 2 -->
+                    <div id="step2" class="tab-content hidden w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <img src="assets/step2.png" alt="Auto-detect job pages" class="w-full aspect-video rounded-xl mb-8 object-cover">
+                        <div class="text-center max-w-lg">
+                            <h3 class="text-2xl font-bold mb-3">Automatic Job Detection</h3>
+                            <p class="text-slate-600">As you browse jobs on LinkedIn, Ashby, Workday or other popular sites, look for the  <span class="bg-green-200 px-1 rounded font-bold">+</span> badge to start tracking.</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Step 3 -->
+                    <div id="step3" class="tab-content w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <img src="assets/step3.png" alt="Save job data to tracker" class="w-full aspect-video rounded-xl mb-8 object-cover">
+                        <div class="text-center max-w-lg">
+                            <h3 class="text-2xl font-bold mb-3">One Click. Zero Copy-Paste.</h3>
+                            <p class="text-slate-600">Our specialized scraper captures core job data instantly. One-click is all it takes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Step 4 -->
+                    <div id="step4" class="tab-content hidden w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <img src="assets/step4.png" alt="Google Sheets with job appilication history" class="w-full aspect-video rounded-xl mb-8 object-cover">
+                        <div class="text-center max-w-lg">
+                            <h3 class="text-2xl font-bold mb-3">Clean, Organized Data</h3>
+                            <p class="text-slate-600">Our thoughtfully engineered template keeps your job data organized, beautiful, and readable.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section id="features" class="py-24 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Why use TrackBee?</h2>
+                <p class="text-slate-500">We designed TrackBee to stay out of your way until you need it.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition">
+                        <i class="fas fa-table text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sheets-First Native</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Save directly to your own Google Sheets with 100% portability and zero platform lock-in.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition">
+                        <i class="fas fa-arrow-pointer text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Frictionless Capture</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Save job data instantly with a single click or keyboard shortcut.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group bg-white p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:text-white transition">
+                        <i class="fas fa-magic-wand-sparkles text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Platform Ready</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">Optimized for LinkedIn and major ATS platforms like Ashbey, Greenhouse and Workday.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Privacy -->
+    <section id="privacy" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto bg-slate-900 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <i class="fas fa-user-shield text-9xl"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="inline-block bg-amber-500 text-slate-900 px-4 py-1 rounded-full text-xs font-bold uppercase mb-4">
+                    Shielded by Privacy
+                </div>
+                <h2 class="text-3xl font-bold mb-6">Zero-Fluff. Maximum Trust.</h2>
+                <p class="text-lg text-slate-300 mb-8">We built TrackBee to be the most private tool in your search arsenal.</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span>We scan page structures to detect jobs. Data extraction only happens when you click to save.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span>We don't store your data. Data flows straight from the extension to your Google Sheets.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span>We never scrape your browsing history, and we don't sell your data.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <!--  SECTION HIDDEN
+    <section class="py-24 max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12">Our Roadmap</h2>
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+            <div class="bg-amber-50 border-2 border-amber-200 p-6 rounded-2xl w-full max-w-xs relative text-left">
+                <div class="absolute -top-3 -left-3 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded">ACTIVE</div>
+                <h4 class="font-bold mb-2">Phase 1: Google Sheets</h4>
+                <p class="text-sm text-slate-600">Perfecting the "save to spreadsheet" experience with custom field mapping.</p>
+            </div>
+            <i class="fas fa-arrow-right text-slate-200 hidden md:block"></i>
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl w-full max-w-xs opacity-60 text-left">
+                <h4 class="font-bold mb-2">Phase 2: Notion</h4>
+                <p class="text-sm text-slate-600">The "Sweet Spot" for Kanban and rich notes lovers. Native Notion API integration.</p>
+            </div>
+            <i class="fas fa-arrow-right text-slate-200 hidden md:block"></i>
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl w-full max-w-xs opacity-60 text-left">
+                <h4 class="font-bold mb-2">Phase 3: Custom DB</h4>
+                <p class="text-sm text-slate-600">Advanced features only if 1,000+ users ask for it. Ownership remains yours.</p>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Final CTA -->
+    <section class="bg-amber-500 text-slate-900 py-24 text-center px-6">
+        <h2 class="text-4xl font-bold mb-6">Ready to organize your search?</h2>
+        <p class="text-slate-800 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
+            Use TrackBee to power your current application workflow.
+        </p>
+        <a href="#" class="bg-slate-900 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-slate-800 transition inline-flex items-center gap-3 shadow-2xl">
+             Add to Chrome - It's Free
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100 text-center px-6 text-slate-500">
+        <div class="flex flex-wrap justify-center gap-6 text-sm mb-8 font-medium">
+            <a href="terms.html" class="hover:text-amber-600 transition">Terms of Service</a>
+            <a href="privacy.html" class="hover:text-amber-600 transition">Privacy Policy</a>
+            <a href="support.html" class="hover:text-amber-600 transition">Support Center</a>
+            <a href="mailto:aimeejin.pro@gmail.com?subject=TrackBee%20Inquiry" class="hover:text-amber-600 transition">Contact Us</a>
+        </div>
+        <p class="text-xs">&copy; 2026 TrackBee. Built for speed and ownership.</p>
+    </footer>
+
+    <!-- Tab Switching Logic -->
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const target = button.getAttribute('data-tab');
+                
+                // Update buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Update content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ | TrackBee</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-100">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/mrbee.png" alt="Mr. Bee Mascot" class="h-9 w-auto bee-float">
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">TrackBee</span>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <!-- SECTION HIDDENT FOR THIS PAGE
+            <a href="index.html" class="hover:text-amber-600 transition">Home</a>
+            <a href="#" class="text-amber-600 font-bold">Support</a>
+            <a href="#" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-full hover:bg-amber-200 transition">Install Extension</a>
+            -->
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-gradient py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
+            How can we help?
+        </h1><br>
+        <!--
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+            Find answers to your questions.
+        </p>
+        -->
+
+        <!-- Search Bar -->
+        <div class="max-w-xl mx-auto relative group">
+            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input 
+                type="text" 
+                id="faq-search" 
+                placeholder="Search for answers" 
+                class="w-full pl-12 pr-12 py-4 rounded-xl border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-lg"
+            >
+            <!-- Clear Button -->
+            <button 
+                id="clear-search" 
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 hover:text-slate-500 transition-colors hidden"
+                aria-label="Clear search"
+            >
+                <i class="fas fa-times-circle text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- FAQ Content -->
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        
+        <!-- Section: Privacy & Trust -->
+        <div class="faq-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
+                <i class="fas fa-user-shield text-amber-500"></i> Privacy & Trust
+            </h2>
+
+            <div class="space-y-4">
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Is TrackBee really free?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>Yes.</strong> TrackBee is completely free. Our core philosophy is to provide a lightweight, no-cost tool that powers your existing workflow. We use your Google Sheets as the "database", so we don't store your data on our servers. This keeps our maintenance costs close to zero.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Can you see my job applications?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>No.</strong> TrackBee operates locally on your browser. When you click "Save," the data goes directly from the job page to your Google Sheets. We do not store a database of your applications, and we don't scrape your browsing history.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Where is my data stored?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>You own your job tracking data. TrackBee writes directly to your Google Sheets and does not store your job applications on our servers.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Section: Getting Started -->
+        <div class="faq-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
+                <i class="fas fa-file-csv text-amber-500"></i> Getting Started
+            </h2>
+
+            <div class="space-y-4">
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>How do I connect my Google Sheet?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>When you launch the TrackBee extension for the first time, you’ll be asked to authorize TrackBee to create and manage a pre-configured 'TrackBee Job Tracker' sheet in your Google Drive. This ensures your workspace is set up with optimized format and layout, so you can start saving jobs immediately. </p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Do I have to use your template?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>Yes.</strong> Using our standardized layout ensures that data always maps to the correct columns and prevents technical errors. Our template is carefully designed to maintain high reliability and readability to ensure an optimized one-click experience.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Can I customize column mapping?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>No. </strong>TrackBee uses a standardized, pre-engineered layout to ensure maximum reliability and readability. We currently do not support swapping column orders, as this can cause data to be sent to the incorrect column.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Can I save to multiple different sheets?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>Currently, TrackBee links to one active Sheet at a time.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Section: Features & Troubleshooting -->
+        <div class="faq-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
+                <i class="fas fa-bolt text-amber-500"></i> Features & Troubleshooting
+            </h2>
+
+            <div class="space-y-4">
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>What sites does TrackBee support?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>TrackBee supports LinkedIn, as well as popular ATS platforms like Ashby, Greenhouse, and Workday.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Can I edit job details or add notes before saving them?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>Absolutely.</strong> You can review and edit the job details directly in the popup before hitting save. You can also add personal notes before the data is sent to your TrackBee Job Tracker sheet.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Can I manually add, edit, or delete jobs in the application tracker?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p><strong>Absolutely.</strong> Because the data is stored in your personal Google Sheets, you have total ownership. You can manually add, delete rows, or edit cell contents at any time. TrackBee is designed to power your workflow, not lock you out of it.</p>
+                    </div>
+                </details>
+
+                 <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>Why are compensation details missing sometimes?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>We only capture salary data if it is explicitly listed on the page in a structured way. Some companies hide this info, so we leave the field blank if we can't find it. You can always enter the details in the popup before hitting save.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden transition-all duration-300 open:shadow-md">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-semibold text-slate-800 hover:text-amber-700">
+                        <span>What if a job isn't detected automatically?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        <p>While we support job tracking for the most popular sites and ATS platforms like LinkedIn, Ashby, Greenhouse, and Workday, certain job pages may vary. If a job page isn't detected, please send us the job URL so we can continue to improve this tool.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-12">
+            <i class="fas fa-search text-4xl text-slate-200 mb-4"></i>
+            <h3 class="text-lg font-bold text-slate-600">No answers found</h3>
+            <p class="text-slate-400">Try a different keyword or contact support.</p>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="text-center mt-16 pt-16 border-t border-slate-100">
+            <h3 class="text-xl font-bold mb-4">Still have questions?</h3>
+            <p class="text-slate-500 mb-6">We're built by humans, for humans. Reach out.</p>
+            <a href="mailto:aimeejin.pro@gmail.com?subject=TrackBee%20Inquiry" class="inline-flex items-center gap-2 text-amber-600 font-bold hover:text-amber-700 hover:underline">
+                <i class="fas fa-envelope"></i> Email Support
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100 text-center px-6 bg-slate-50 text-slate-500">
+
+        <div class="flex flex-wrap justify-center gap-6 text-sm mb-8 font-medium">
+            <a href="index.html" class="hover:text-amber-600 transition">Home</a>
+            <a href="support.html" class="text-amber-600 font-bold">Support</a>
+            <a href="terms.html" class="hover:text-amber-600 transition">Terms</a>
+            <a href="privacy.html" class="hover:text-amber-600 transition">Privacy</a>
+        </div>
+        <p class="text-xs">&copy; 2026 TrackBee. Built for speed and ownership.</p>
+    </footer>
+
+    <!-- Search Logic -->
+    <script>
+        const searchInput = document.getElementById('faq-search');
+        const clearBtn = document.getElementById('clear-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqSections = document.querySelectorAll('.faq-section');
+        const noResults = document.getElementById('no-results');
+
+        function filterFAQs(term) {
+            let matchesFound = 0;
+
+            // Filter individual items
+            faqItems.forEach(item => {
+                const question = item.querySelector('summary').textContent.toLowerCase();
+                const answer = item.querySelector('div').textContent.toLowerCase();
+                
+                if (question.includes(term) || answer.includes(term)) {
+                    item.classList.remove('hidden');
+                    matchesFound++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Hide empty sections
+            faqSections.forEach(section => {
+                const visibleItems = section.querySelectorAll('.faq-item:not(.hidden)');
+                
+                if (section.querySelectorAll('.faq-item').length > 0) {
+                     if (visibleItems.length === 0) {
+                        section.classList.add('hidden');
+                    } else {
+                        section.classList.remove('hidden');
+                    }
+                } else {
+                    // Clip Trick Section logic
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(term)) {
+                         section.classList.remove('hidden');
+                         matchesFound++;
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Toggle No Results
+            if (matchesFound === 0 && term !== '') {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            
+            // Toggle clear button visibility
+            if (term.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            filterFAQs(term);
+        });
+
+        // Clear button logic
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.classList.add('hidden');
+            filterFAQs('');
+            searchInput.focus();
+        });
+    </script>
+
+</body>
+</html>
