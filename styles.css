@@ -1,23 +1,99 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
 body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-.hero-gradient { background: radial-gradient(circle at 50% 50%, #fffbeb 0%, #ffffff 100%); }
+.hero-gradient { background: radial-gradient(circle at 50% 50%, #fdf6d7 0%, #ffffff 100%); }
+
 .bee-float { animation: float 3s ease-in-out infinite; }
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
-details > summary {
-    list-style: none;
-}
-details > summary::-webkit-details-marker {
-    display: none;
-}
 
-/* Tab active state styling */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+
 .tab-btn.active {
     background-color: white;
-    color: #b45309; /* amber-700 */
+    color: #b45309;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-color: #f59e0b; /* amber-500 */
+    border-color: #f59e0b;
 }
+
+/* Tab content fade-slide */
+.tab-content { animation: fadeSlideUp 0.35s ease both; }
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Hero entrance */
+@keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.hero-title  { animation: heroFadeIn 0.7s ease 0.1s both; }
+.hero-sub    { animation: heroFadeIn 0.7s ease 0.3s both; }
+.hero-cta    { animation: heroFadeIn 0.7s ease 0.5s both; }
+.hero-social { animation: heroFadeIn 0.7s ease 0.65s both; }
+
+/* CTA pulse ring */
+.btn-pulse { position: relative; }
+.btn-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 6px solid #f59e0b;
+    opacity: 0;
+    animation: pulseRing 2.5s ease-out infinite;
+    pointer-events: none;
+}
+@keyframes pulseRing {
+    0%   { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 0;   transform: scale(1.08); }
+}
+
+/* Feature card hover lift */
+.feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+
+/* Honeycomb decorative bg */
+.honeycomb-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66z' fill='none' stroke='%23f59e0b' stroke-opacity='0.08' stroke-width='1'/%3E%3Cpath d='M28 100L0 84V50L28 34l28 16v34L28 100z' fill='none' stroke='%23f59e0b' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Privacy page */
+.privacy-highlight {
+    border-left: 4px solid #f59e0b;
+    background: #fffbeb;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+/* ── Scroll-driven sticky steps ── */
+.step-panel {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.active-step {
+    background-color: white;
+}
+.active-step .step-num {
+    background-color: #f59e0b;
+    color: white;
+}
+
+/* Hide scrollbar for platform banner horizontal scroll */
+.overflow-x-auto::-webkit-scrollbar { display: none; }
+.overflow-x-auto { -ms-overflow-style: none; scrollbar-width: none; }
