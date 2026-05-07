@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | TrackBee</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="bg-white text-slate-900">
 
     <!-- Navigation -->
@@ -33,76 +32,112 @@
 
     <!-- Header -->
     <header class="hero-gradient py-16 px-6 text-center border-b border-amber-50">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
-            Privacy Policy
-        </h1>
-        <!--
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-            Zero fluff. Maximum trust. Your data belongs to you.
-        </p>
-        -->
-        <p class="text-sm text-slate-600 mt-4">Last Updated: February 2026</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">Privacy Policy</h1>
+        <p class="text-slate-500 text-sm mt-3">Last Updated: May 2026</p>
     </header>
 
-    <!-- Policy Content -->
-    <main class="max-w-3xl mx-auto px-6 py-16 text-slate-700 leading-relaxed space-y-12">
-        
-        <section>
-            <p class="text-lg">TrackBee ("we," "our," or "us") is committed to protecting your privacy. We built this extension to solve a simple problem - helping job seekers track their applications with zero friction. This policy explains exactly what data we access, how it is used, and why you are always in control.</p>
-        </section>
-
-        <section class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <i class="fas fa-search text-amber-500"></i> 1. Information We Access (And What We Don't)
-            </h2>
-            <p>To function correctly, TrackBee requires certain permissions in your browser. Here is exactly what happens:</p>
-            <ul class="list-disc list-inside space-y-3 ml-4 bg-slate-50 p-6 rounded-xl border border-slate-100 text-slate-800">
-                <li><strong>Active Tab Reading:</strong> We <em>only</em> read the content of the active web page you are viewing or when our background script checks if the current URL is a supported job site to display the "+" badge.</li>
-                <li><strong>No Background Scraping:</strong> We do not track, read, or store your general browsing history.</li>
-                <li><strong>No Personal Identity Tracking:</strong> TrackBee does not require you to create an account with us. We do not know your name, email address, or personal identity.</li>
+    <!-- TL;DR Summary Card -->
+    <div class="max-w-3xl mx-auto pt-16 -mt-2 pt-10">
+        <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-xl">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">TL;DR</span>
+                <h2 class="font-bold text-lg">The short version</h2>
+            </div>
+            <ul class="space-y-3 text-slate-300 text-sm">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-400 mt-0.5 flex-shrink-0"></i>
+                    <span><strong class="text-white">We don't store your data.</strong> Job details go directly from your browser to your Google Sheet — nothing passes through our servers.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-400 mt-0.5 flex-shrink-0"></i>
+                    <span><strong class="text-white">We only read pages when you ask.</strong> TrackBee reads the current tab only when you click Save. No background monitoring.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-400 mt-0.5 flex-shrink-0"></i>
+                    <span><strong class="text-white">We never sell your data.</strong> Since we don't store it, there is nothing to sell.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-400 mt-0.5 flex-shrink-0"></i>
+                    <span><strong class="text-white">No account required.</strong> We don't know your name, email, or identity.</span>
+                </li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Policy Content -->
+    <main class="max-w-3xl mx-auto px-6 py-12 text-slate-700 leading-relaxed space-y-10">
+
+        <section class="space-y-4 reveal">
+            <p class="text-base text-slate-600">TrackBee ("we," "our," or "us") is committed to protecting your privacy. We built this extension to solve a simple problem: helping job seekers track their applications with zero friction. This policy explains exactly what data we access, how it is used, and why you are always in control.</p>
         </section>
 
-        <section class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <i class="fas fa-database text-amber-500"></i> 2. How Your Data is Used
+        <section class="space-y-4 reveal">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-search text-sm"></i></span>
+                1. What We Access, And What We Don't
             </h2>
-            <p>The sole purpose of accessing job page data (like Job Title, Company, and Compensation) is to transport it into your designated Google Sheet.</p>
-            <p><strong>TrackBee does not have a central database.</strong> We do not intercept, store, or copy your job applications on any external servers owned by us. Your data flows directly from your local browser to your Google account via the official Google Sheets API.</p>
+            <div class="privacy-highlight">
+                <p class="text-sm font-semibold text-amber-800 mb-3">Permissions TrackBee uses:</p>
+                <ul class="space-y-3 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-amber-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Active Tab Reading:</strong> We only read the content of the current tab you are on, and only when our background script checks if the URL is a supported job site (to show the "+" badge), or when you click Save.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-times text-slate-400 mt-1 flex-shrink-0"></i>
+                        <span><strong>No Background Scraping:</strong> We do not track, read, or store your general browsing history at any time.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-times text-slate-400 mt-1 flex-shrink-0"></i>
+                        <span><strong>No Identity Tracking:</strong> TrackBee does not require an account. We do not know your name, email address, or personal identity.</span>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <i class="fab fa-google text-amber-500"></i> 3. Google API Services Disclosure
+        <section class="space-y-4 reveal">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-database text-sm"></i></span>
+                2. How Your Data Is Used
             </h2>
-            <p>TrackBee's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-amber-600 hover:underline font-semibold">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-            <p>When you authenticate TrackBee with your Google Account, we request the minimum permissions necessary to append rows to the specific spreadsheet URL you provide. We cannot read your emails, and we do not have access to your other Google Drive files.</p>
+            <p>The sole purpose of accessing job page data like Job Title, Company, and Compensation, is to transport it into your designated Google Sheet.</p>
+            <p><strong>TrackBee has no central database.</strong> We do not intercept, store, or copy your job applications on any servers owned by us. Your data flows directly from your local browser to your Google Account via the official Google Sheets API.</p>
         </section>
 
-        <section class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <i class="fas fa-ban text-amber-500"></i> 4. We Do Not Sell Your Data
+        <section class="space-y-4 reveal">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fab fa-google text-sm"></i></span>
+                3. Google API Services Disclosure
             </h2>
-            <p>Because we do not store your data, we have nothing to sell. TrackBee will never sell, rent, or share your job search history, preferences, or any other information to recruiters, advertisers, or third-party data brokers. Period.</p>
+            <p>TrackBee's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-amber-600 hover:underline font-semibold">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+            <p>When you authenticate TrackBee with your Google Account, we request only the minimum permissions needed to append rows to the specific spreadsheet URL you provide. We cannot read your emails, and we do not have access to any other Google Drive files.</p>
         </section>
 
-        <section class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <i class="fas fa-shield-alt text-amber-500"></i> 5. Chrome Web Store Compliance
+        <section class="space-y-4 reveal">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-ban text-sm"></i></span>
+                4. We Do Not Sell Your Data
+            </h2>
+            <p>Because we do not store your data, we have nothing to sell. TrackBee will never sell, rent, or share your job search history, preferences, or any other information with recruiters, advertisers, or third-party data brokers. Period.</p>
+        </section>
+
+        <section class="space-y-4 reveal">
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-alt text-sm"></i></span>
+                5. Chrome Web Store Compliance
             </h2>
             <p>This privacy policy is provided to comply with the Chrome Web Store Developer Program Policies. TrackBee is designed with a single purpose: to facilitate the rapid saving of job posting metadata into a user-owned Google Sheet.</p>
         </section>
 
-        <section class="space-y-4 pt-8 border-t border-slate-100">
-            <h2 class="text-2xl font-bold text-slate-900">Questions?</h2>
-            <p>If you have any questions or concerns about this Privacy Policy or how your data is handled, please <a href="mailto:support@usetrackbee.com?subject=TrackBee%20Inquiry" class="text-amber-600 hover:underline font-semibold">contact us</a>.</p>
+        <section class="space-y-4 pt-8 border-t border-slate-100 reveal">
+            <h2 class="text-xl font-bold text-slate-900">Questions?</h2>
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:support@usetrackbee.com?subject=TrackBee%20Privacy%20Inquiry" class="text-amber-600 hover:underline font-semibold">support@usetrackbee.com</a>.</p>
         </section>
 
     </main>
 
     <!-- Footer -->
     <footer class="py-12 border-t border-slate-100 text-center px-6 bg-slate-50 text-slate-500">
-
         <div class="flex flex-wrap justify-center gap-6 text-sm mb-8 font-medium">
             <a href="index.html" class="hover:text-amber-600 transition">Home</a>
             <a href="support.html" class="hover:text-amber-600 transition">Support</a>
@@ -112,8 +147,16 @@
         <p class="text-xs">&copy; 2026 TrackBee. Built for speed and ownership.</p>
     </footer>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
-
 </html>
-
-
