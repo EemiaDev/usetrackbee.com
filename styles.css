@@ -171,6 +171,20 @@ details > summary::-webkit-details-marker { display: none; }
 .marquee-track {
     overflow: hidden;
     width: 100%;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
 }
 .marquee-content {
     display: flex;
@@ -179,7 +193,7 @@ details > summary::-webkit-details-marker { display: none; }
     animation: marquee-scroll 25s linear infinite;
 }
 .marquee-item {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #94a3b8;
     white-space: nowrap;
