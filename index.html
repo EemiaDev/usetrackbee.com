@@ -15,13 +15,13 @@
 
     <!-- Navigation -->
     <div class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="mx-12 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2">
                 <img src="assets/mrbee.png" alt="Mr. Bee" class="h-9 w-auto bee-float">
                 <span class="text-xl font-extrabold tracking-tight text-slate-900">TrackBee</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#how-it-works" class="hover:text-amber-600 transition">How it Works</a>
+                <a href="#how-it-works-desktop" class="hover:text-amber-600 transition">How it Works</a>
                 <a href="#features" class="hover:text-amber-600 transition">Key Features</a>
                 <a href="support.html" class="hover:text-amber-600 transition">Support Center</a>
                 <a href="https://chromewebstore.google.com/detail/trackbee-job-tracker-for/ncgglpjphaeeijgcmfojhafficeecapo" target="_blank"
@@ -34,44 +34,58 @@
 
 
     <!-- Hero -->
-    <header class="hero-gradient text-center min-h-screen flex flex-col">
+    <header class="hero hero-gradient flex flex-col overflow-hidden">
         
-        <!-- Hero content -->
+        <!-- Hero content: split layout on md+, stacked on mobile -->
         <div class="flex-1 flex items-center justify-center py-16">
-            <div class="max-w-3xl mx-auto">
-                <h1 class="hero-title text-5xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-[1.2] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-700">
-                    Stop Copy-Pasting.<br><span class="text-amber-500 underline decoration-amber-200 decoration-4 underline-offset-8">Just Click.</span>
-                </h1>
-                <p class="hero-sub text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
-                    Turn your Google Sheets into a job tracker — in one click.
-                </p>
-                <div class="hero-cta flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://buymeacoffee.com/eemia.studio" target="_blank"
-                       class="bg-white border border-slate-200 text-slate-600 px-8 py-4 rounded-xl font-bold text-lg hover:border-amber-400 transition flex items-center justify-center gap-2">
-                        Support Us
-                    </a>
-                    <a href="https://chromewebstore.google.com/detail/trackbee-job-tracker-for/ncgglpjphaeeijgcmfojhafficeecapo" target="_blank"
-                       class="btn-pulse bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition shadow-xl shadow-slate-200 flex items-center justify-center gap-3">
-                        <i class="fab fa-chrome"></i> Add to Chrome — It's Free
-                    </a>
+            <div class="section-inner w-full flex flex-col md:flex-row items-center gap-8 md:gap-10">
+
+                <!-- Left: text + CTA -->
+                <div class="w-full md:w-2/3 text-left">
+                    <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-5 bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-700">
+                        Stop Copy-Pasting.<br><span class="text-amber-500 underline decoration-amber-200 decoration-4 underline-offset-8">Just Click.</span>
+                    </h1>
+                    <p class="hero-sub text-lg text-slate-600 mb-8 leading-relaxed">
+                        Turn your Google Sheets into a job tracker — in one click.
+                    </p>
+                    <div class="hero-cta flex flex-col sm:flex-row gap-3">
+                        <a href="https://buymeacoffee.com/eemia.studio" target="_blank"
+                           class="bg-white border border-slate-200 text-slate-600 px-6 py-3 rounded-xl font-bold text-base hover:border-amber-400 transition flex items-center justify-center gap-2">
+                            Support Us
+                        </a>
+                        <a href="https://chromewebstore.google.com/detail/trackbee-job-tracker-for/ncgglpjphaeeijgcmfojhafficeecapo" target="_blank"
+                           class="btn-pulse bg-slate-900 text-white px-6 py-3 rounded-xl font-bold text-base hover:bg-slate-800 transition shadow-xl shadow-slate-200 flex items-center justify-center gap-3">
+                            <i class="fab fa-chrome"></i> Add to Chrome — It's Free
+                        </a>
+                    </div>
                 </div>
 
-                <!--
-                <p class="hero-social mt-6 text-sm text-slate-400">Join 100+ job seekers who own their application data.</p>
-                -->
+                <!-- Right: demo video -->
+                <div class="w-full md:w-1/3 flex items-center justify-center" style="min-height:0; overflow:hidden;">
+                    <div style="border-radius: 12px; overflow: hidden; width: 100%;">
+                        <video
+                            src="assets/demo.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            style="width:100%; max-height:100%; object-fit:contain; display:block;"
+                        ></video>
+                    </div>
+                </div>
 
-            </div>
-        </div>
-        
-         <!-- Platform banner — pinned to bottom of hero viewport -->
-         <div class="pb-8 pt-4 border-t border-amber-100">
-            <p class="text-sm font-medium text-slate-400 tracking-widest mb-4">Works on your favorite job boards &amp; ATS platforms</p>
-            <div class="overflow-x-auto mt-6">
-                <div class="flex flex-nowrap items-center justify-center gap-8 min-w-max mx-auto px-6" id="platform-logos"></div>
             </div>
         </div>
 
     </header>
+
+    <!-- Platform rolling banner -->
+    <div class="border-y border-slate-100 bg-white py-5 overflow-hidden">
+        <p class="text-xs font-semibold text-slate-400 tracking-widest text-center mb-4 uppercase">Works on your favorite job boards &amp; ATS platforms</p>
+        <div class="marquee-track">
+            <div class="marquee-content" id="marquee-content"></div>
+        </div>
+    </div>
 
 
     <!-- How it Works -->
@@ -131,98 +145,82 @@
         </div>
     </section>
 
-    <!-- DESKTOP: scroll-driven sticky (hidden on mobile) -->
-    <section class="hidden md:block bg-white relative" style="height: 500vh;">
-        <div class="sticky top-[0px] h-[calc(100vh)] flex flex-col">
+    <!-- DESKTOP: auto-tab switcher (hidden on mobile) -->
+    <section id="how-it-works-desktop" class="hidden md:block bg-white py-20" style="max-height: 800px;">
 
-            <!-- Section heading -->
-            <div class="text-center pt-24 pb-6 px-6 flex-shrink-0 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">How it Works</h2>
-                <p class="text-slate-500 text-base md:text-lg">Browse jobs on any platform, let TrackBee handle the tracking.</p>
+        <!-- Section heading -->
+        <div class="section-inner text-center mb-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2">How it Works</h2>
+            <p class="text-slate-500 text-base md:text-lg">Browse jobs on any platform, let TrackBee handle the tracking.</p>
+        </div>
+
+        <!-- Two-column body -->
+        <div class="section-inner flex flex-row gap-8 items-stretch w-full pb-10 reveal" style="height: 520px;">
+
+            <!-- Left: step nav -->
+            <div class="w-1/5 flex flex-col gap-2 flex-shrink-0 justify-center">
+                <button data-step="0" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent transition group">
+                    <div class="flex items-center gap-3" style="position:relative;z-index:1;">
+                        <div class="step-num w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" data-num="0">1</div>
+                        <h4 class="font-bold text-base">Connect</h4>
+                    </div>
+                </button>
+                <button data-step="1" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent transition group">
+                    <div class="flex items-center gap-3" style="position:relative;z-index:1;">
+                        <div class="step-num w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" data-num="1">2</div>
+                        <h4 class="font-bold text-base">Browse</h4>
+                    </div>
+                </button>
+                <button data-step="2" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent transition group">
+                    <div class="flex items-center gap-3" style="position:relative;z-index:1;">
+                        <div class="step-num w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" data-num="2">3</div>
+                        <h4 class="font-bold text-base">Click</h4>
+                    </div>
+                </button>
+                <button data-step="3" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent transition group">
+                    <div class="flex items-center gap-3" style="position:relative;z-index:1;">
+                        <div class="step-num w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" data-num="3">4</div>
+                        <h4 class="font-bold text-base">Track</h4>
+                    </div>
+                </button>
             </div>
 
-            <!-- Two-column sticky body -->
-            <div class="flex flex-row gap-8 items-stretch flex-1 max-w-6xl mx-auto w-full px-6 pb-10 min-h-0 reveal">
+            <!-- Right: content panel -->
+            <div class="flex-1 bg-white rounded-3xl border border-slate-100 overflow-hidden relative">
 
-                <!-- Left: step nav -->
-                <div class="w-1/5 flex flex-col gap-2 flex-shrink-0 justify-center">
-                    <button data-step="0" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent hover:bg-amber-100 transition group">
-                        <div class="flex items-center gap-3">
-                            <div class="step-num w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 transition-all text-sm flex-shrink-0">1</div>
-                            <h4 class="font-bold text-base">Connect</h4>
-                        </div>
-                    </button>
-                    <button data-step="1" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent hover:bg-amber-100 transition group">
-                        <div class="flex items-center gap-3">
-                            <div class="step-num w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 transition-all text-sm flex-shrink-0">2</div>
-                            <h4 class="font-bold text-base">Browse</h4>
-                        </div>
-                    </button>
-                    <button data-step="2" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent hover:bg-amber-100 transition group">
-                        <div class="flex items-center gap-3">
-                            <div class="step-num w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 transition-all text-sm flex-shrink-0">3</div>
-                            <h4 class="font-bold text-base">Click</h4>
-                        </div>
-                    </button>
-                    <button data-step="3" class="step-btn text-left px-4 py-4 rounded-2xl border-2 border-transparent hover:bg-amber-100 transition group">
-                        <div class="flex items-center gap-3">
-                            <div class="step-num w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 transition-all text-sm flex-shrink-0">4</div>
-                            <h4 class="font-bold text-base">Track</h4>
-                        </div>
-                    </button>
+                <!-- Step 1 -->
+                <div class="step-panel absolute inset-0 opacity-0 pointer-events-none" data-panel="0">
+                    <img src="assets/step1.png" alt="Connect to Google Sheet" class="w-full h-full object-contain object-center" style="background:#1A1A1A;">
+                    <div class="step-caption">
+                        <h3 class="text-xl font-bold mb-1">Connect once, track forever.</h3>
+                        <p class="text-sm opacity-80">Sign in with Google to get started. TrackBee only accesses the Tracker it creates, nothing else.</p>
+                    </div>
                 </div>
 
-                <!-- Right: content panel -->
-                <div class="flex-1 bg-white rounded-3xl border border-slate-100 overflow-hidden relative min-h-0">
-
-                    <!-- Step 1 -->
-                    <div class="step-panel absolute inset-0 flex flex-col opacity-0 pointer-events-none transition-opacity duration-400" data-panel="0">
-                        <div class="flex-1 min-h-0 overflow-hidden">
-                            <img src="assets/step1.png" alt="Connect to Google Sheet" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="flex-shrink-0 text-center px-10 py-6 border-t border-slate-100 bg-white">
-                            <h3 class="text-2xl font-bold mb-2">Connect once, track forever.</h3>
-                            <p class="text-slate-600 text-base">Sign in with Google to get started. TrackBee only accesses the Tracker it creates, nothing else.</p>
-                        </div>
+                <!-- Step 2 -->
+                <div class="step-panel absolute inset-0 opacity-0 pointer-events-none" data-panel="1">
+                    <img src="assets/step2.png" alt="Browse" class="w-full h-full object-contain object-center" style="background:#1A1A1A;">
+                    <div class="step-caption">
+                        <h3 class="text-xl font-bold mb-1">Browse jobs on your favorite platforms.</h3>
+                        <p class="text-sm opacity-80">Spot a job you like? A <span class="bg-green-300 text-green-900 px-1 rounded font-bold">+</span> badge on the extension icon means TrackBee is ready to capture.</p>
                     </div>
+                </div>
 
-                    <!-- Step 2 -->
-                    <div class="step-panel absolute inset-0 flex flex-col opacity-0 pointer-events-none transition-opacity duration-400" data-panel="1">
-                        <div class="flex-1 min-h-0 overflow-hidden">
-                            <img src="assets/step2.png" alt="Browse" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="flex-shrink-0 text-center px-10 py-6 border-t border-slate-100 bg-white">
-                            <h3 class="text-2xl font-bold mb-2">Browse jobs on your favorite platforms.</h3>
-                            <p class="text-slate-600 text-base">Spot a job you like? A <span class="bg-green-200 px-1 rounded font-bold">+</span> badge on the extension icon means TrackBee is ready to capture.</p>
-                        </div>
+                <!-- Step 3 -->
+                <div class="step-panel absolute inset-0 opacity-0 pointer-events-none" data-panel="2">
+                    <img src="assets/step3.png" alt="Click" class="w-full h-full object-contain object-center" style="background:#1A1A1A;">
+                    <div class="step-caption">
+                        <h3 class="text-xl font-bold mb-1">One click, done.</h3>
+                        <p class="text-sm opacity-80">Key job data is captured and saved to your Google Sheet Tracker in a single click.</p>
                     </div>
+                </div>
 
-                    <!-- Step 3 -->
-                    <div class="step-panel absolute inset-0 flex flex-col opacity-0 pointer-events-none transition-opacity duration-400" data-panel="2">
-                        <div class="flex-1 min-h-0 overflow-hidden">
-                            <img src="assets/step3.png" alt="Click" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="flex-shrink-0 text-center px-10 py-6 border-t border-slate-100 bg-white">
-                            <h3 class="text-2xl font-bold mb-2">One click, done.</h3>
-                            <p class="text-slate-600 text-base">Key job data is captured and saved to your Google Sheet Tracker in a single click.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="step-panel absolute inset-0 flex flex-col opacity-0 pointer-events-none transition-opacity duration-400" data-panel="3">
-                        <div class="flex-1 min-h-0 overflow-hidden">
-                            <img src="assets/step4.png" alt="Track" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="flex-shrink-0 text-center px-10 py-6 border-t border-slate-100 bg-white">
-                            <h3 class="text-2xl font-bold mb-2">Your job search, organized.</h3>
-                            <p class="text-slate-600 text-base">Every saved job becomes a clean row in your Tracker. Organized, searchable, and 100% yours.</p>
-                        </div>
-                    </div>
-
-                    <!-- Scroll hint -->
-                    <div id="scroll-hint" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-400 text-xs font-medium pointer-events-none transition-opacity duration-500">
-                        <span>Scroll to explore</span>
-                        <i class="fas fa-chevron-down animate-bounce"></i>
+                <!-- Step 4 -->
+                <div class="step-panel absolute inset-0 opacity-0 pointer-events-none" data-panel="3">
+                    <img src="assets/step4.png" alt="Track" class="w-full h-full object-contain object-center" style="background:#1A1A1A;">
+                    <div class="step-caption">
+                        <h3 class="text-xl font-bold mb-1">Your job search, organized.</h3>
+                        <p class="text-sm opacity-80">Every saved job becomes a clean row in your Tracker. Organized, searchable, and 100% yours.</p>
                     </div>
                 </div>
             </div>
@@ -231,7 +229,7 @@
 
     <!-- Core Features -->
     <section id="features" class="py-24 bg-slate-50 border-y border-slate-100 reveal">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="section-inner">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">Simple by design.</h2>
                 <p class="text-slate-500">One extension, one click, one place for all your applications.</p>
@@ -269,8 +267,9 @@
     </section>
 
     <!-- Trust & Privacy -->
-    <section id="privacy" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto bg-slate-900 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden reveal">
+    <section id="privacy" class="py-24">
+        <div class="section-inner">
+            <div class="bg-slate-900 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden reveal">
             <div class="absolute top-0 right-0 p-8 opacity-10">
                 <i class="fas fa-user-shield text-9xl"></i>
             </div>
@@ -310,6 +309,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
     </section>
 
@@ -362,105 +362,106 @@
         <!-- Tab Switching Logic -->
         <script>
             (() => {
-                // ── Scroll-reveal (sections below the fold) ──────────────────────────
+                // ── Scroll-reveal ─────────────────────────────────────────────────────
                 const revealObserver = new IntersectionObserver((entries) => {
                     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
                 }, { threshold: 0.12 });
                 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-        
-                // ── Scroll-driven sticky steps ────────────────────────────────────────
-                const section   = document.querySelector('.hidden.md\\:block');
-                const stepBtns  = Array.from(document.querySelectorAll('.step-btn'));
-                const panels    = Array.from(document.querySelectorAll('.step-panel'));
-                const scrollHint = document.getElementById('scroll-hint');
-                const STEPS     = stepBtns.length; // 4
-                let   activeStep = -1;
-                let   hintHidden = false;
-        
-                function activateStep(idx, progressFraction) {
-                    // clamp
-                    idx = Math.max(0, Math.min(STEPS - 1, idx));
-        
-                    // Update nav buttons
+
+                // ── Auto-tab switcher ─────────────────────────────────────────────────
+                const stepBtns = Array.from(document.querySelectorAll('.step-btn'));
+                const panels   = Array.from(document.querySelectorAll('.step-panel'));
+                const STEPS    = stepBtns.length;
+                const DURATION = 5000;
+                let activeStep = 0;
+                let timer      = null;
+
+                // Inject fill div and restore simple number circles
+                stepBtns.forEach((btn, i) => {
+                    const num = btn.querySelector('.step-num');
+                    num.innerHTML = `${i + 1}`;
+
+                    // Add fill layer behind button content
+                    const fill = document.createElement('div');
+                    fill.className = 'step-btn-fill';
+                    btn.insertBefore(fill, btn.firstChild);
+                });
+
+                function activateStep(idx) {
+                    activeStep = idx;
+
                     stepBtns.forEach((btn, i) => {
-                        const num = btn.querySelector('.step-num');
+                        const num  = btn.querySelector('.step-num');
+                        const fill = btn.querySelector('.step-btn-fill');
                         const isActive = i === idx;
-        
+
                         btn.classList.toggle('active-step', isActive);
-                        num.classList.toggle('bg-amber-500',  isActive);
-                        num.classList.toggle('text-white',    isActive);
+                        num.classList.toggle('bg-amber-500',   isActive);
+                        num.classList.toggle('text-white',     isActive);
                         num.classList.toggle('bg-slate-100',  !isActive);
                         num.classList.toggle('text-slate-400', !isActive);
+
+                        // Reset fill instantly
+                        fill.style.transition = 'none';
+                        fill.style.width = '0%';
                     });
-        
-                    // Swap panels (only when step actually changes)
-                    if (idx !== activeStep) {
-                        panels.forEach((p, i) => {
-                            const show = i === idx;
-                            p.style.opacity       = show ? '1' : '0';
-                            p.style.pointerEvents = show ? 'auto' : 'none';
-                            // re-trigger a subtle scale entrance
-                            if (show) {
-                                p.style.transform = 'scale(0.97)';
-                                requestAnimationFrame(() => {
-                                    p.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-                                    p.style.transform  = 'scale(1)';
-                                });
-                            }
+
+                    panels.forEach((p, i) => {
+                        const show = i === idx;
+                        p.style.opacity       = show ? '1' : '0';
+                        p.style.pointerEvents = show ? 'auto' : 'none';
+                        if (show) {
+                            p.style.transform = 'scale(0.97)';
+                            requestAnimationFrame(() => {
+                                p.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                                p.style.transform  = 'scale(1)';
+                            });
+                        }
+                    });
+
+                    // Animate button fill upward over DURATION
+                    const activeFill = stepBtns[idx].querySelector('.step-btn-fill');
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            activeFill.style.transition = `width ${DURATION}ms linear`;
+                            activeFill.style.width = '100%';
                         });
-                        activeStep = idx;
-                    }
+                    });
                 }
-        
-                function onScroll() {
-                    const rect      = section.getBoundingClientRect();
-                    const scrolled  = -rect.top;                     // px scrolled into section
-                    const total     = section.offsetHeight - window.innerHeight; // total scrollable distance
-                    const rawFrac   = Math.max(0, Math.min(1, scrolled / total));
-        
-                    // Which step zone are we in? (0-3)
-                    const stepFrac  = rawFrac * STEPS;              // 0 → 4
-                    const stepIdx   = Math.min(Math.floor(stepFrac), STEPS - 1);
-                    const innerFrac = stepFrac - stepIdx;           // 0 → 1 within this step
-        
-                    activateStep(stepIdx, innerFrac);
-        
-                    // Hide scroll hint after first scroll into section
-                    if (!hintHidden && scrolled > 10) {
-                        hintHidden = true;
-                        scrollHint.style.opacity = '0';
-                    }
+
+                function startTimer() {
+                    clearInterval(timer);
+                    timer = setInterval(() => {
+                        activateStep((activeStep + 1) % STEPS);
+                    }, DURATION);
                 }
-        
-                // ── Manual click: jump scroll to that step's zone ────────────────────
+
                 stepBtns.forEach((btn, idx) => {
                     btn.addEventListener('click', () => {
-                        const sectionTop = section.offsetTop;
-                        const total      = section.offsetHeight - window.innerHeight;
-                        const target     = sectionTop + ((idx + 0.5) / STEPS) * total;
-                        window.scrollTo({ top: target, behavior: 'smooth' });
+                        activateStep(idx);
+                        startTimer();
                     });
                 });
-        
-                // ── Init: show step 0 immediately, listen for scroll ─────────────────
-                activateStep(0, 0);
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll(); // run once in case page loads mid-scroll
+
+                activateStep(0);
+                startTimer();
             })();
         </script>
     
     <script>
-        // Platform logos banner
+        // Rolling marquee banner
         const platforms = [
             'LinkedIn', 'Indeed', 'Greenhouse', 'Lever',
             'Ashby', 'Workday', 'Rippling', 'SmartRecruiters'
         ];
-        const container = document.getElementById('platform-logos');
-        platforms.forEach((name) => {
+        const track = document.getElementById('marquee-content');
+
+        // Duplicate list 3x for seamless loop
+        [...platforms, ...platforms, ...platforms].forEach((name) => {
             const span = document.createElement('span');
-            span.className = 'text-xl font-semibold text-slate-400';
+            span.className = 'marquee-item';
             span.textContent = name;
-            container.appendChild(span);
+            track.appendChild(span);
         });
     </script>
 

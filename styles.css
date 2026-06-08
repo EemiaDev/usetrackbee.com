@@ -82,9 +82,30 @@ details > summary::-webkit-details-marker { display: none; }
     border-radius: 0 0.75rem 0.75rem 0;
 }
 
-/* ── Scroll-driven sticky steps ── */
+/* ── Auto-tab steps ── */
 .step-panel {
     transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Button fill progress */
+.step-btn {
+    position: relative;
+    overflow: hidden;
+}
+.step-btn-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: #fef3c7;
+    transition: none;
+    z-index: 0;
+    border-radius: inherit;
+}
+.step-btn > *:not(.step-btn-fill) {
+    position: relative;
+    z-index: 1;
 }
 .active-step {
     background-color: white;
@@ -92,6 +113,84 @@ details > summary::-webkit-details-marker { display: none; }
 .active-step .step-num {
     background-color: #f59e0b;
     color: white;
+}
+
+/* Clean up old circle fill styles */
+.step-num {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+}
+.step-label { display: none; }
+.step-circle-fill { display: none; }
+
+/* Step caption overlay */
+.step-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 28px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    color: #0f172a;
+}
+
+/* Step progress bar */
+
+/* ── Hero responsive max-height ── */
+.hero { min-height: 600px; max-height: 600px; }
+
+@media (min-width: 768px) {
+    .hero { max-height: 700px; }
+}
+@media (min-width: 1280px) {
+    .hero { max-height: 800px; }
+}
+@media (min-width: 1536px) {
+    .hero { max-height: 900px; }
+}
+
+/* ── Standard section container ── */
+.section-inner {
+    max-width: 1152px; /* same as Tailwind max-w-6xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 64px;  /* px-16 */
+    padding-right: 64px;
+}
+@media (max-width: 768px) {
+    .section-inner {
+        padding-left: 32px; /* px-8 */
+        padding-right: 32px;
+    }
+}
+
+/* ── Rolling marquee banner ── */
+.marquee-track {
+    overflow: hidden;
+    width: 100%;
+}
+.marquee-content {
+    display: flex;
+    gap: 48px;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+}
+.marquee-item {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #94a3b8;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.marquee-track:hover .marquee-content {
+    animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
 }
 
 /* Hide scrollbar for platform banner horizontal scroll */
